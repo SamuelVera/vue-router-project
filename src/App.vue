@@ -1,9 +1,12 @@
 <template>
+  <!--Layout of the webpage-->
   <div id="nav">
+    <!--Vue router special tag, allows the Vue router to intercept the requests for new URLs -->
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <!--Vue router special tag, used for dynamically inject the route components-->
+  <router-view />
 </template>
 
 <style>
