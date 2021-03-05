@@ -9,6 +9,8 @@ import About from "../views/About.vue";
 import Jobs from "../views/jobs/Jobs";
 /**Job Details page */
 import JobDetails from "../views/jobs/JobDetails";
+/**404 page */
+import Page404 from "../views/404";
 
 /**Routes to be used in the application */
 const routes = [
@@ -34,6 +36,17 @@ const routes = [
     component: JobDetails,
     //Allow accepting route params as props
     props: true,
+  },
+  //Redirect from one route to another route
+  {
+    path: "/all-jobs", //Redirecting from
+    redirect: "/jobs", //Redirect to
+  },
+  //Catching of non existing routes with a 404 routes
+  {
+    path: "/:catchAll(.*)", //Regex pattern to catch all routes not catched first
+    name: "404",
+    component: Page404,
   },
 ];
 

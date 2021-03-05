@@ -31,6 +31,7 @@ export default {
   cursor: pointer;
   color: #444;
   transition: 0.3s;
+  border-radius: 10px;
 }
 .job h2:hover {
   background: #ddd;
