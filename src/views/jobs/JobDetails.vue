@@ -6,12 +6,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      /**Id from the route object */
-      id: this.$route.params.id,
-    };
-  },
+  //Accepting route params as props
+  props: ["id"],
 };
 </script>
 

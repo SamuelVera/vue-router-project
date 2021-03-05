@@ -32,6 +32,8 @@ const routes = [
     path: "/jobs/:id",
     name: "JobDetails",
     component: JobDetails,
+    //Allow accepting route params as props
+    props: true,
   },
 ];
 
