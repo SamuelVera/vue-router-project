@@ -1,9 +1,14 @@
 //Utilities to create the router
 import { createRouter, createWebHistory } from "vue-router";
 //Routes views
+/**Home page */
 import Home from "../views/Home.vue";
+/**About page */
 import About from "../views/About.vue";
+/**Jobs list page */
 import Jobs from "../views/jobs/Jobs";
+/**Job Details page */
+import JobDetails from "../views/jobs/JobDetails";
 
 /**Routes to be used in the application */
 const routes = [
@@ -21,6 +26,12 @@ const routes = [
     path: "/jobs",
     name: "Jobs",
     component: Jobs,
+  },
+  //Route with parameter
+  {
+    path: "/jobs/:id",
+    name: "JobDetails",
+    component: JobDetails,
   },
 ];
 
