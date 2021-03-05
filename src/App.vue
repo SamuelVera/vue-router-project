@@ -8,9 +8,41 @@
     <router-link :to="{ name: 'About' }">About</router-link> |
     <router-link :to="{ name: 'Jobs' }">Jobs</router-link>
   </div>
+
+  <!--Buttons for programmatic navigation-->
+  <!--Attach click events and use handlers -->
+  <button @click="redirect">Redirect</button>
+  <button @click="goBack">Go Back</button>
+  <button @click="goForward">Go Forward</button>
   <!--Vue router special tag, used for dynamically inject the route components-->
   <router-view />
 </template>
+
+<script>
+export default {
+  methods: {
+    /**Do redirection */
+    redirect() {
+      //Reference the router object
+      //Push an extra route with the router-link :to object
+      //this.$router.push({ name: "Home" }); //Push leaves a history record
+      this.$router.replace({ name: "Home" }); //Replace doesn't leave a history record
+    },
+    /**Go back on history */
+    goBack() {
+      //Reference the router object
+      //Use go methods with -1 to go back 1 in the history
+      this.$router.go(-1);
+    },
+    /**Go forward on history */
+    goForward() {
+      //Reference the router object
+      //Use go methods with 1 to go forward 1 in the history
+      this.$router.go(1); //Doesn't execute if there's nothing to go forward
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -36,5 +68,18 @@
 #nav a.router-link-exact-active {
   color: white;
   background: crimson;
+}
+
+button {
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.7;
 }
 </style>
