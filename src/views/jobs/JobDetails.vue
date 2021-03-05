@@ -1,10 +1,12 @@
 <template>
-  <h1>Job Details Page</h1>
   <!--Can be done using the route object to extract params with databinding ($route.params.id)-->
-  <p>The job id is: {{ id }}</p>
-  <p v-if="job === null">Loading...</p>
+  <div v-if="!job">
+    <!--Conditionally showing based on state of gotten data-->
+    <p>Loading job details...</p>
+  </div>
   <div v-else>
-    <h2>{{ job.title }}</h2>
+    <h1>{{ job.title }}</h1>
+    <p>The job id is: {{ id }}</p>
     <h3>{{ job.details }}</h3>
   </div>
 </template>
